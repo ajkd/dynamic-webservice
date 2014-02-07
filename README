@@ -109,9 +109,11 @@ LOGINUER   devuws.login+doLogin
 
 LIBDEF   - defines the service routines exsiting folders, jar and zip files.
            Example property file relates to windows and for linux LIBDEF would
-           look somthing like /ajkd/devuws/build+/ajkd/devuws/uer.jar 
-LOGINUER - defines the login handling routine ( devuws.login is the in built )
-           and the method to call by the main application ( doLogin is the method ). 
+           look somthing like /ajkd/devuws/build,/ajkd/devuws/uer.jar 
+uprof    - location of the user profile definition xml file
+ufunc    - locaion of the function definition xml file
+LOGINUER - defines the login handling routine ( devuws.login is the in built routine )
+           and the method to call by the main application ( doLogin ). 
 
  
 
