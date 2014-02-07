@@ -102,7 +102,7 @@ All these tables are defined in a property file
 
                devuws.propeties. 
 
-LIBDEF     file:c:\\ajkd\\devuws\\build\\+file:c:\\ajkd\devuws\\uer.jar     
+LIBDEF     file:c:\\ajkd\\devuws\\build\\,file:c:\\ajkd\devuws\\uer.jar     
 uprof      c:\\ajkd\\devuws\\uprof.xml
 ufunc      c:\\ajkd\\devuws\\ufunc.xml
 LOGINUER   devuws.login+doLogin
