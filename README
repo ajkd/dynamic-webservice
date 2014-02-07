@@ -113,8 +113,6 @@ LIBDEF   - defines the service routines exsiting folders, jar and zip files.
 LOGINUER - defines the login handling routine ( devuws.login is the in built )
            and the method to call by the main application ( doLogin is the method ). 
 
-More Information and for working application of this web service for 
-apache tomcat server is available at github.           
  
 
          
