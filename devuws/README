@@ -7,10 +7,10 @@ login routine ( i.e. LOGINUER )
                        First byte - return code
                        Second byte onwards - service_routine_class_name + method_to_call
                        
-                       if return code is 0 from secodnd byte will have the service routine class name "+"
+                       if return code is 0 then from second byte onwards will have the service routine class name "+"
                        method to call
                        
-                       if return code is not 0 ( error condition) and from second byte will have the error message
+                       if return code is not 0 ( error condition) and from second byte onwards will have the error message
                        which will be passed to the client.
                        
                        
