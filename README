@@ -1,34 +1,32 @@
     
-            Dynamic Webservice Application
-
-I have developed a webservice which I am going to describe
-has a unique feature of deployable to give multiple services
-with a single publish web service. Many services with one 
-webservice concept is acheived by service routines which 
+This web service developed to give multiple services 
+with a single published web service. Many services with one 
+web service concept is achieved by service routines which 
 are loaded dynamically.
 
+
 This is developed with java and is a RPC based web service. 
-This web service has two input String (xml string) parametrs 
+This web service has two input String (xml string) parameters 
 and a String (xml string) output parameter. The first parameter 
-gives the user creditials, i.e. user id, password, and a function 
+gives the user credentials, i.e. user id, password, and a function 
 code. Other parameter gives the data required for the service routine 
 to carry out its processing. 
 
 The function code passes to the 
-webservice determines which service routine is to be called. 
-The webservice validates and authonticate the userid, password and 
+Web service determines which service routine is to be called. 
+The web service validates and authenticate the user id, password and 
 the function code. If validations are ok the service routine 
 corresponding to service is dynamically loaded and gives control
-to it.This is handled by in built login module 
+to it. This is handled by in built login module 
 which is also dynamically loaded and can also be replaced. 
 
-The user ids, passwords, function codes, service rouines, etc.
-are defined in xml files. The service routines which are java clases 
+The user ids, passwords, function codes, service routines, etc.
+are defined in xml files. The service routines which are java classes 
 and exist in specified folders or exist inside specified jar 
 or zip files. 
 
 To give a new service one has simply need to write 
-a service routine and put it to a specified folder or spcified jar 
+a service routine and put it to a specified folder or specified jar 
 or zip file. No web service is required to be developed  
 nor server nor application is needed to be restarted to give new 
 service.
@@ -41,7 +39,7 @@ First parameter : xml string
           <funcid><ACDETAIL</funcid>
        </msg>
 
-Second parameter : String which will be used by the routine 
+Second parameter : String. which will be used by the service routine 
                    corresponding to funcid.
                    could be somthing like
                        <account>
@@ -50,16 +48,18 @@ Second parameter : String which will be used by the routine
                    or could be simple string such as "124789"
                    and depend on how service routine built to accept it
 
-Output parameter : xml string
-                    <rmsg><rcode>0</rcode><msg>output from client</msg></rmsg>
-                    rcode "0" means everything is ok <msg> has the output from
-                    service routine. 
-                    if rcode is not "0" means error and <msg> will give the reason.                  
+Output parameter : xml string.
+            <rmsg><rcode>0</rcode><msg>output from client</msg></rmsg>
+                 rcode "0" means everything is ok 
+                          <msg> has the output from service routine. 
+                 if rcode is not "0" means error and 
+                          <msg> will give the reason.                  
+
 
 
 Inbuilt login module use two xml files
 
-  User creditional xml file 
+  User credential xml file 
 
           uprof.xml
 
@@ -68,12 +68,12 @@ Inbuilt login module use two xml files
                      <id>ajkd</id>
                      <password>abcd1234>
                      <status>A</status>    ---- profile is in active state
-                     <funcid>BALINQ+ACDETAIL+TRANLIST</funcid>  user ajkd given 
-                   </user>                                      permission to call  
-                </uprof>                                        three functions
-                                                                BALINQ, ACDETAIL 
-                                                                and TRANLIST
-              
+                     <funcid>BALINQ+ACDETAIL+TRANLIST</funcid>                                   
+                  </user>
+               </uprof>
+
+              User “ajkd” given permission to functions BALINQ, ACDETAIL and           
+                   TRANLIST
 
   Functions definition xml file 
 
@@ -82,9 +82,9 @@ Inbuilt login module use two xml files
                <ufunc>
                  <func>
                    <id>BALINQ</id>
-                   <uer>devuws.balinq+process</uer>   class name for BALINQ function
-                   <status>A</status>                 is devuws.balinq and method 
-                 </func>                              that will be called is process
+                   <uer>devuws.balinq+process</uer>                     
+                   <status>A</status>
+                 </func>
                  <func>
                    <id>ACDETAIL</id>
                    <uer>devuws.acdetail+getdetail</uer>
@@ -98,6 +98,10 @@ Inbuilt login module use two xml files
                </ufunc> 
 
 
+               “devuws.balinq” is the service routine class BALINQ function
+               method that will be called is “process”
+
+
 All these tables are defined in a property file 
 
                devuws.propeties. 
@@ -107,14 +111,15 @@ uprof      c:\\ajkd\\devuws\\uprof.xml
 ufunc      c:\\ajkd\\devuws\\ufunc.xml
 LOGINUER   devuws.login+doLogin
 
-LIBDEF   - defines the service routines exsiting folders, jar and zip files.
-           Example property file relates to windows and for linux LIBDEF would
-           look somthing like /ajkd/devuws/build,/ajkd/devuws/uer.jar 
+LIBDEF   - defines the service routines existing folders, jar and zip files.
+           for linux environment LIBDEF would
+           be something like /ajkd/devuws/build,/ajkd/devuws/uer.jar 
+
 uprof    - location of the user profile definition xml file
+
 ufunc    - locaion of the function definition xml file
-LOGINUER - defines the login handling routine ( devuws.login is the in built routine )
-           and the method to call by the main application ( doLogin ). 
 
- 
+LOGINUER - defines the login handling routine. “devuws.login” is the in built    
+           Routine and “doLogin” is the the method to call by the main
+           application. 
 
-         
