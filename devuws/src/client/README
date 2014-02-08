@@ -1,3 +1,5 @@
-
-devuwsclient.java is standalone java webservice client.
-If you are using IDE such as Netbeans or eclipse you don not need devuwsImplService.java file.
+devuwsclient.java is standalone java web service client.
+If you are using IDE such as Netbeans or eclipse to develop a web service client application
+then you do not need devuwsImplService file.
+If you are going to use devuwsImplService then you have to change the web service calling url 
+in this file accordingly and compile.
