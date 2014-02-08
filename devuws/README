@@ -1,4 +1,3 @@
-
 login routine ( i.e. LOGINUER )
 ===============================
 
@@ -24,5 +23,9 @@ service routine
                       
     output parameter : String. This will be passed to the client in the <msg> tag
     
+    
+    
+devuws.war is apache tomcat deployable war file and devuws_ds.war is the folder structure of this
+war file. You have to modified the system property file location in the web.xml. 
     
                         
