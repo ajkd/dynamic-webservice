@@ -27,5 +27,7 @@ service routine
     
 devuws.war is apache tomcat deployable war file and devuws_ds.war is the folder structure of this
 war file. You have to modified the system property file location in the web.xml. 
+Use "jar -cvf devuws.war -C devuws_ds.war ." to create new war file after modification to files in the
+devuws_ds.war folder.
     
                         
