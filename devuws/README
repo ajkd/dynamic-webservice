@@ -31,3 +31,4 @@ Use "jar -cvf devuws.war -C devuws_ds.war ." to create new war file after modifi
 devuws_ds.war folder.
     
                         
+to test web service ==> http://localhost:8080/devuws/ws?WSDL
