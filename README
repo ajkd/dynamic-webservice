@@ -49,7 +49,7 @@ Second parameter : String. which will be used by the service routine
                    and depend on how service routine built to accept it
 
 Output parameter : xml string.
-            <rmsg><rcode>0</rcode><msg>output from client</msg></rmsg>
+            <rmsg><rcode>0</rcode><msg>output from service routine</msg></rmsg>
                  rcode "0" means everything is ok 
                           <msg> has the output from service routine. 
                  if rcode is not "0" means error and 
@@ -72,8 +72,8 @@ Inbuilt login module use two xml files
                   </user>
                </uprof>
 
-              User “ajkd” given permission to functions BALINQ, ACDETAIL and           
-                   TRANLIST
+              User “ajkd” given permission to BALINQ, ACDETAIL and TRANLIST service functions.       
+                   
 
   Functions definition xml file 
 
@@ -98,8 +98,8 @@ Inbuilt login module use two xml files
                </ufunc> 
 
 
-               “devuws.balinq” is the service routine class BALINQ function
-               method that will be called is “process”
+               “devuws.balinq” is the service routine class of the BALINQ service function
+               method that will be called by the main application is “process”
 
 
 All these tables are defined in a property file 
