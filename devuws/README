@@ -30,5 +30,21 @@ war file. You have to modified the system property file location in the web.xml.
 Use "jar -cvf devuws.war -C devuws_ds.war ." to create new war file after modification to files in the
 devuws_ds.war folder.
     
+            
+            By default, Tomcat does not comes with any JAX-WS dependencies, So, you have to include it manually.
+
+1. Go here http://jax-ws.java.net/.
+2. Download JAX-WS RI distribution.
+3. Unzip it and copy following JAX-WS dependencies to Tomcat library folder “{$TOMCAT}/lib“.
+
+    jaxb-impl.jar
+    jaxws-api.jar
+    jaxws-rt.jar
+    gmbal-api-only.jar
+    management-api.jar
+    stax-ex.jar
+    streambuffer.jar
+    policy.jar
+              
                         
 to test web service ==> http://localhost:8080/devuws/ws?WSDL
